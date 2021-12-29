@@ -6,15 +6,7 @@ public class ExhaustiveSearch {
     static Scanner input = new Scanner(System.in);
    
     /*---------------------------------------- Helpful Methods ----------------------------------------*/
-    // display array (solutions)
-    static void displayArray (int arr[]){
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-        }
-        System.out.println(" ");
-    }
-    
-    // make array(n) from 1 to n
+    // make array(n) from 1 to n thedn get all permutations for this array
     static int[] firstPermutearray (int arr[]) {
         int n = arr.length;
         for (int i = 0; i < n; i++) {
@@ -43,13 +35,15 @@ public class ExhaustiveSearch {
         return newArray;
     }
     /*--------------------------------------------------------------------------------------------------*/
-
+    
+    
+    /*-------------------------------------- Main Method ----------------------------------------------------*/
     public static void main(String[] args) {
         // get Size of the Balanced Matrix
         System.out.println("Enter Size for Balanced Matrix");
         int n = input.nextInt();
         // Create Balanced Matrix
-        int matrix[][] = new int[n][n]; 
+        int matrix[][] = new int [n][n];
         // get matrix inputs
         System.out.println("Enter Elements for Balanced Matrix "+n+"X"+n);
         for (int i = 0; i < matrix.length; i++) {
@@ -69,7 +63,7 @@ public class ExhaustiveSearch {
         int minOptimal = sumvalues(A,matrix); // for saving the minimum optimal solution      
         
         
-        // heap's algorithm, iterative
+        // heap's algorithm, iterative --to get all permutations
         // make idx array with zeros
         int[] idx = new int[A.length];
         Arrays.fill(idx, 0);
